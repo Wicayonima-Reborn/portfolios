@@ -1,0 +1,1617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Wicaksono — AI Automation Freelancer</title>
+
+  <meta
+    name="description"
+    content="Wicaksono helps businesses simplify repetitive work with practical AI automation and business workflows."
+  />
+
+  <style>
+    :root {
+      --dark: #07100d;
+      --dark-soft: #0c1612;
+      --green: #a9d8c1;
+      --green-dark: #193428;
+
+      --light: #f7f9f8;
+      --white: #ffffff;
+
+      --text: #17201c;
+      --muted: #69736e;
+      --border: #dfe6e2;
+
+      --dark-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      z-index: 100;
+
+      border-bottom: 1px solid var(--dark-border);
+
+      background: rgba(7, 16, 13, 0.86);
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      font-size: 14px;
+      color: #b8c2bd;
+    }
+
+    .nav-links a {
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-contact {
+      padding: 9px 16px;
+
+      border-radius: 7px;
+
+      color: var(--green) !important;
+      background: var(--green-dark);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 720px;
+
+      display: flex;
+      align-items: center;
+
+      padding-top: 72px;
+
+      color: white;
+
+      background:
+        radial-gradient(
+          circle at 80% 40%,
+          rgba(117, 191, 155, 0.12),
+          transparent 28%
+        ),
+        var(--dark);
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+
+      margin-bottom: 18px;
+
+      color: var(--green);
+
+      font-size: 13px;
+      font-weight: 600;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(54px, 7vw, 82px);
+
+      line-height: 0.95;
+
+      letter-spacing: -4px;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      color: var(--green);
+
+      font-size: clamp(25px, 3vw, 34px);
+
+      line-height: 1.15;
+
+      font-weight: 600;
+
+      margin-bottom: 22px;
+    }
+
+    .hero-description {
+      max-width: 520px;
+
+      color: #9ca9a3;
+
+      font-size: 17px;
+
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 13px 20px;
+
+      border-radius: 8px;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #08110d;
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--dark-border);
+
+      color: #d1d8d4;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+
+    /* =========================
+       WORKFLOW CARD
+    ========================= */
+
+    .workflow-card {
+      position: relative;
+
+      padding: 30px;
+
+      border: 1px solid var(--dark-border);
+
+      border-radius: 18px;
+
+      background: rgba(255, 255, 255, 0.025);
+    }
+
+    .workflow-top {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: center;
+
+      margin-bottom: 30px;
+    }
+
+    .workflow-title {
+      color: #c7d0cb;
+
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .workflow-status {
+      display: flex;
+      align-items: center;
+
+      gap: 7px;
+
+      color: #82908a;
+
+      font-size: 11px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+    }
+
+    .workflow {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 12px;
+    }
+
+    .workflow-node {
+      display: flex;
+
+      align-items: center;
+
+      gap: 14px;
+
+      padding: 15px;
+
+      border: 1px solid var(--dark-border);
+
+      border-radius: 11px;
+
+      background: var(--dark-soft);
+    }
+
+    .node-icon {
+      width: 38px;
+      height: 38px;
+
+      display: grid;
+      place-items: center;
+
+      flex-shrink: 0;
+
+      border-radius: 9px;
+
+      background: var(--green-dark);
+
+      color: var(--green);
+
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .node-content strong {
+      display: block;
+
+      color: #edf2ef;
+
+      font-size: 13px;
+
+      margin-bottom: 2px;
+    }
+
+    .node-content span {
+      color: #75827c;
+
+      font-size: 11px;
+    }
+
+    .workflow-arrow {
+      margin-left: 18px;
+
+      color: #64716b;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-label {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: #5b866f;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: 36px;
+
+      line-height: 1.15;
+
+      letter-spacing: -1.2px;
+
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      color: var(--muted);
+
+      max-width: 600px;
+
+      font-size: 16px;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      background: var(--light);
+    }
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 0.8fr 1.2fr;
+
+      gap: 100px;
+
+      align-items: start;
+    }
+
+    .about h2 {
+      max-width: 400px;
+
+      font-size: 38px;
+
+      line-height: 1.15;
+
+      letter-spacing: -1.5px;
+    }
+
+    .about-content p {
+      color: #5e6863;
+
+      font-size: 17px;
+
+      line-height: 1.8;
+
+      margin-bottom: 18px;
+    }
+
+    .business-note {
+      margin-top: 28px;
+
+      padding: 18px 20px;
+
+      border-left: 3px solid #8dbfa6;
+
+      background: #edf4f0;
+
+      color: #405049;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: white;
+    }
+
+    .section-heading {
+      margin-bottom: 45px;
+    }
+
+    .services-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 18px;
+    }
+
+    .service-card {
+      padding: 30px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 14px;
+
+      background: white;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .service-number {
+      color: #92bca5;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 22px;
+    }
+
+    .service-card h3 {
+      font-size: 20px;
+
+      letter-spacing: -0.5px;
+
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #707a75;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       PRICING
+    ========================= */
+
+    .pricing {
+      background: var(--light);
+    }
+
+    .pricing-grid {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 15px;
+    }
+
+    .price-card {
+      padding: 24px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 13px;
+
+      background: white;
+    }
+
+    .price-card h3 {
+      font-size: 15px;
+
+      margin-bottom: 14px;
+    }
+
+    .price {
+      font-size: 22px;
+
+      font-weight: 700;
+
+      letter-spacing: -0.5px;
+    }
+
+    .price-description {
+      margin-top: 8px;
+
+      color: #78817d;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+    .price-note {
+      margin-top: 25px;
+
+      color: #7a8580;
+
+      font-size: 12px;
+    }
+
+
+    /* =========================
+       TECH STACK
+    ========================= */
+
+    .tech {
+      background: white;
+    }
+
+    .tech-group {
+      margin-bottom: 35px;
+    }
+
+    .tech-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .tech-group-title {
+      margin-bottom: 15px;
+
+      color: #69736e;
+
+      font-size: 12px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+    }
+
+    .tech-list {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+
+    .tech-item {
+      padding: 11px 17px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 8px;
+
+      background: #fafcfb;
+
+      font-size: 14px;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       CURRENTLY
+    ========================= */
+
+    .currently {
+      background: var(--light);
+    }
+
+    .currently-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .currently-card {
+      padding: 25px;
+
+      border: 1px solid var(--border);
+
+      border-radius: 13px;
+
+      background: white;
+    }
+
+    .currently-card span {
+      display: block;
+
+      color: #6d8f7c;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 12px;
+    }
+
+    .currently-card p {
+      color: #3e4843;
+
+      font-size: 15px;
+
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 90px 0;
+
+      background: var(--dark);
+
+      color: white;
+
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(34px, 5vw, 52px);
+
+      line-height: 1.05;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 550px;
+
+      margin: 0 auto;
+
+      color: #8e9b95;
+
+      font-size: 15px;
+    }
+
+    .cta .btn {
+      margin-top: 28px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 30px 0;
+
+      background: var(--dark);
+
+      border-top: 1px solid var(--dark-border);
+
+      color: #738079;
+
+      font-size: 12px;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+    }
+
+    .footer-brand {
+      color: #dce4df;
+
+      font-weight: 700;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 900px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      .hero {
+        padding: 130px 0 80px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+      }
+
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .currently-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    @media (max-width: 650px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+
+        letter-spacing: -3px;
+      }
+
+      .hero h2 {
+        font-size: 25px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .workflow-card {
+        padding: 20px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .section-title,
+      .about h2 {
+        font-size: 30px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
+
+  <nav>
+
+    <div class="container nav-inner">
+
+      <a href="#" class="brand">
+        Wicaksono
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#about">About</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#pricing">Pricing</a>
+
+        <a href="#stack">Stack</a>
+
+        <a href="#contact" class="nav-contact">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <header class="hero">
+
+    <div class="container hero-grid">
+
+
+      <div>
+
+        <span class="hero-label">
+          AI Automation Freelancer
+        </span>
+
+        <h1>
+          Wicaksono
+        </h1>
+
+        <h2>
+          Automation with a business mindset.
+        </h2>
+
+        <p class="hero-description">
+          I help businesses simplify repetitive work
+          and build practical AI-powered workflows.
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a
+            href="mailto:wicaksonodeveloper@gmail.com?subject=Automation%20Project"
+            class="btn btn-primary"
+          >
+            Let's Work Together
+          </a>
+
+          <a
+            href="Wicaksono-CV.pdf"
+            class="btn btn-secondary"
+            download
+          >
+            Download CV
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- WORKFLOW VISUAL -->
+
+      <div class="workflow-card">
+
+        <div class="workflow-top">
+
+          <span class="workflow-title">
+            Business Workflow
+          </span>
+
+          <span class="workflow-status">
+
+            <span class="status-dot"></span>
+
+            Automation ready
+
+          </span>
+
+        </div>
+
+
+        <div class="workflow">
+
+
+          <div class="workflow-node">
+
+            <div class="node-icon">
+              01
+            </div>
+
+            <div class="node-content">
+
+              <strong>
+                Business Input
+              </strong>
+
+              <span>
+                Data, request or repetitive task
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="workflow-arrow">
+            ↓
+          </div>
+
+
+          <div class="workflow-node">
+
+            <div class="node-icon">
+              02
+            </div>
+
+            <div class="node-content">
+
+              <strong>
+                Automation
+              </strong>
+
+              <span>
+                n8n / Make.com
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="workflow-arrow">
+            ↓
+          </div>
+
+
+          <div class="workflow-node">
+
+            <div class="node-icon">
+              AI
+            </div>
+
+            <div class="node-content">
+
+              <strong>
+                AI Processing
+              </strong>
+
+              <span>
+                OpenAI API
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <div class="workflow-arrow">
+            ↓
+          </div>
+
+
+          <div class="workflow-node">
+
+            <div class="node-icon">
+              ✓
+            </div>
+
+            <div class="node-content">
+
+              <strong>
+                Business Result
+              </strong>
+
+              <span>
+                Less manual work
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================
+       ABOUT
+  ========================= -->
+
+  <section id="about" class="about">
+
+    <div class="container about-grid">
+
+
+      <div>
+
+        <span class="section-label">
+          About
+        </span>
+
+        <h2>
+          Building automation around real business problems.
+        </h2>
+
+      </div>
+
+
+      <div class="about-content">
+
+        <p>
+          I'm a freelancer focused on practical AI automation
+          and business workflows.
+        </p>
+
+        <p>
+          I use automation, AI, APIs, and connected business tools
+          to reduce repetitive work and make everyday processes
+          simpler.
+        </p>
+
+        <div class="business-note">
+
+          The goal isn't to use technology just because it's new.
+          The goal is to find where automation can create useful
+          business value.
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       SERVICES
+  ========================= -->
+
+  <section id="services" class="services">
+
+    <div class="container">
+
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Services
+        </span>
+
+        <h2 class="section-title">
+          What I can automate
+        </h2>
+
+        <p class="section-description">
+          Practical automation solutions designed around
+          business workflows and repetitive tasks.
+        </p>
+
+      </div>
+
+
+      <div class="services-grid">
+
+
+        <div class="service-card">
+
+          <div class="service-number">
+            01
+          </div>
+
+          <h3>
+            AI Workflow Automation
+          </h3>
+
+          <p>
+            Build workflows that use AI to process information,
+            make decisions, and handle repetitive tasks.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-number">
+            02
+          </div>
+
+          <h3>
+            Business Process Automation
+          </h3>
+
+          <p>
+            Turn repetitive manual processes into simpler
+            and more consistent automated workflows.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-number">
+            03
+          </div>
+
+          <h3>
+            API & App Integration
+          </h3>
+
+          <p>
+            Connect the tools a business already uses so
+            information can move between systems automatically.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-number">
+            04
+          </div>
+
+          <h3>
+            AI-Powered Workflows
+          </h3>
+
+          <p>
+            Combine AI with automation to create workflows
+            that are more capable and efficient.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       PRICING
+  ========================= -->
+
+  <section id="pricing" class="pricing">
+
+    <div class="container">
+
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Starting From
+        </span>
+
+        <h2 class="section-title">
+          Simple pricing
+        </h2>
+
+        <p class="section-description">
+          Final pricing depends on workflow complexity,
+          integrations, and business requirements.
+        </p>
+
+      </div>
+
+
+      <div class="pricing-grid">
+
+
+        <div class="price-card">
+
+          <h3>
+            Simple Automation
+          </h3>
+
+          <div class="price">
+            Rp750K+
+          </div>
+
+          <p class="price-description">
+            Simple repetitive tasks and basic workflows.
+          </p>
+
+        </div>
+
+
+        <div class="price-card">
+
+          <h3>
+            Business Workflow
+          </h3>
+
+          <div class="price">
+            Rp2,5M+
+          </div>
+
+          <p class="price-description">
+            Multi-step business processes and integrations.
+          </p>
+
+        </div>
+
+
+        <div class="price-card">
+
+          <h3>
+            AI Automation
+          </h3>
+
+          <div class="price">
+            Rp4M+
+          </div>
+
+          <p class="price-description">
+            Workflows involving AI processing and automation.
+          </p>
+
+        </div>
+
+
+        <div class="price-card">
+
+          <h3>
+            Custom Automation
+          </h3>
+
+          <div class="price">
+            Let's discuss
+          </div>
+
+          <p class="price-description">
+            Complex requirements and custom systems.
+          </p>
+
+        </div>
+
+
+      </div>
+
+
+      <p class="price-note">
+        * Starting prices. Every project is scoped based on requirements.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       TECH STACK
+  ========================= -->
+
+  <section id="stack" class="tech">
+
+    <div class="container">
+
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Tools
+        </span>
+
+        <h2 class="section-title">
+          Tools I work with
+        </h2>
+
+        <p class="section-description">
+          A practical stack focused on automation,
+          AI, integrations, and business workflows.
+        </p>
+
+      </div>
+
+
+      <div class="tech-group">
+
+        <div class="tech-group-title">
+          Core
+        </div>
+
+        <div class="tech-list">
+
+          <div class="tech-item">
+            n8n
+          </div>
+
+          <div class="tech-item">
+            Make.com
+          </div>
+
+          <div class="tech-item">
+            OpenAI API
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="tech-group">
+
+        <div class="tech-group-title">
+          Supporting
+        </div>
+
+        <div class="tech-list">
+
+          <div class="tech-item">
+            Google Sheets
+          </div>
+
+          <div class="tech-item">
+            Google Workspace
+          </div>
+
+          <div class="tech-item">
+            REST APIs
+          </div>
+
+          <div class="tech-item">
+            Python
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CURRENTLY
+  ========================= -->
+
+  <section class="currently">
+
+    <div class="container">
+
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          Currently
+        </span>
+
+        <h2 class="section-title">
+          What I'm working on
+        </h2>
+
+      </div>
+
+
+      <div class="currently-grid">
+
+
+        <div class="currently-card">
+
+          <span>
+            Focus 01
+          </span>
+
+          <p>
+            Building practical automation solutions.
+          </p>
+
+        </div>
+
+
+        <div class="currently-card">
+
+          <span>
+            Focus 02
+          </span>
+
+          <p>
+            Working with AI-powered workflows.
+          </p>
+
+        </div>
+
+
+        <div class="currently-card">
+
+          <span>
+            Focus 03
+          </span>
+
+          <p>
+            Exploring business automation opportunities.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CTA
+  ========================= -->
+
+  <section id="contact" class="cta">
+
+    <div class="container">
+
+      <h2>
+        Have a repetitive process?
+        Let's automate it.
+      </h2>
+
+      <p>
+        Tell me what you're trying to improve,
+        and let's see where automation can help.
+      </p>
+
+
+      <a
+        href="mailto:wicaksonodeveloper@gmail.com?subject=Automation%20Project"
+        class="btn btn-primary"
+      >
+        Let's Work Together
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div>
+
+        <span class="footer-brand">
+          Wicaksono
+        </span>
+
+        <span>
+          — AI Automation Freelancer
+        </span>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a
+          href="https://www.linkedin.com/in/wicaksono-b47188345"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+
+        <a
+          href="https://github.com/Wicayonima-Reborn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+
+        <a
+          href="mailto:wicaksonodeveloper@gmail.com"
+        >
+          Email
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
