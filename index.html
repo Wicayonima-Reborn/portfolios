@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Wicaksono — AI Automation Freelancer</title>
+  <title>Wicaksono — Workflow & System Automation Specialist</title>
 
   <meta
     name="description"
-    content="Wicaksono helps businesses simplify repetitive work with practical AI automation and business workflows."
+    content="Wicaksono membantu UMKM dan bisnis menghemat waktu dengan otomatisasi alur kerja n8n, Make.com, dan integrasi API."
   />
-
-  <style>
+<style>
     :root {
-      --dark: #07100d;
-      --dark-soft: #0c1612;
-      --green: #a9d8c1;
-      --green-dark: #193428;
-
-      --light: #f7f9f8;
-      --white: #ffffff;
-
-      --text: #17201c;
-      --muted: #69736e;
-      --border: #dfe6e2;
-
-      --dark-border: rgba(255, 255, 255, 0.1);
+      /* Palette Monochrome Obsidian: High Contrast Tech */
+      --dark: #050505;
+      --dark-soft: #0a0a0c;
+      --dark-card: #121215;
+      --border-dark: rgba(255, 255, 255, 0.12);
+      
+      --white-neon: #ffffff;
+      --white-muted: #a1a1aa;
+      --silver: #e4e4e7;
+      
+      --light: #fafafa;
+      --text: #09090b;
+      --muted: #71717a;
+      --border: #e4e4e7;
     }
 
     * {
@@ -61,30 +61,21 @@
       margin: auto;
     }
 
-
-    /* =========================
-       NAVBAR
-    ========================= */
-
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-
       z-index: 100;
-
-      border-bottom: 1px solid var(--dark-border);
-
-      background: rgba(7, 16, 13, 0.86);
-
+      border-bottom: 1px solid var(--border-dark);
+      background: rgba(5, 5, 5, 0.85);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
 
     .nav-inner {
       height: 72px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -94,143 +85,109 @@
       font-size: 17px;
       font-weight: 700;
       letter-spacing: -0.3px;
-
-      color: white;
+      color: var(--white-neon);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 28px;
-
       font-size: 14px;
-      color: #b8c2bd;
-    }
-
-    .nav-links a {
-      transition: color 0.2s ease;
+      color: var(--white-muted);
     }
 
     .nav-links a:hover {
-      color: var(--green);
+      color: var(--white-neon);
     }
 
     .nav-contact {
       padding: 9px 16px;
-
       border-radius: 7px;
-
-      color: var(--green) !important;
-      background: var(--green-dark);
+      color: var(--dark) !important;
+      background: var(--white-neon);
+      font-weight: 600;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
     }
 
-
-    /* =========================
-       HERO
-    ========================= */
-
+    /* HERO */
     .hero {
-      min-height: 720px;
-
+      min-height: 680px;
       display: flex;
       align-items: center;
-
       padding-top: 72px;
-
       color: white;
-
       background:
         radial-gradient(
-          circle at 80% 40%,
-          rgba(117, 191, 155, 0.12),
-          transparent 28%
+          circle at 80% 20%,
+          rgba(255, 255, 255, 0.05),
+          transparent 40%
+        ),
+        radial-gradient(
+          circle at 10% 80%,
+          rgba(255, 255, 255, 0.03),
+          transparent 30%
         ),
         var(--dark);
     }
 
     .hero-grid {
       display: grid;
-
       grid-template-columns: 1fr 1fr;
-
-      gap: 80px;
-
+      gap: 60px;
       align-items: center;
     }
 
     .hero-label {
       display: inline-block;
-
       margin-bottom: 18px;
-
-      color: var(--green);
-
-      font-size: 13px;
-      font-weight: 600;
-
-      letter-spacing: 1.5px;
+      color: var(--silver);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      border-left: 2px solid var(--white-neon);
+      padding-left: 10px;
     }
 
     .hero h1 {
-      font-size: clamp(54px, 7vw, 82px);
-
-      line-height: 0.95;
-
-      letter-spacing: -4px;
-
+      font-size: clamp(48px, 6vw, 72px);
+      line-height: 1.0;
+      letter-spacing: -3px;
       margin-bottom: 20px;
+      color: var(--white-neon);
     }
 
     .hero h2 {
-      color: var(--green);
-
-      font-size: clamp(25px, 3vw, 34px);
-
-      line-height: 1.15;
-
-      font-weight: 600;
-
+      color: var(--white-muted);
+      font-size: clamp(22px, 2.5vw, 30px);
+      line-height: 1.2;
+      font-weight: 500;
       margin-bottom: 22px;
     }
 
     .hero-description {
       max-width: 520px;
-
-      color: #9ca9a3;
-
-      font-size: 17px;
-
+      color: #71717a;
+      font-size: 16px;
       line-height: 1.7;
     }
 
     .hero-buttons {
       display: flex;
-
       align-items: center;
-
       gap: 12px;
-
       margin-top: 32px;
     }
 
     .btn {
       display: inline-flex;
-
       align-items: center;
       justify-content: center;
-
       padding: 13px 20px;
-
       border-radius: 8px;
-
       font-size: 14px;
       font-weight: 600;
-
-      transition:
-        transform 0.2s ease,
-        opacity 0.2s ease,
-        border-color 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .btn:hover {
@@ -238,501 +195,309 @@
     }
 
     .btn-primary {
-      background: var(--green);
-      color: #08110d;
+      background: var(--white-neon);
+      color: var(--dark);
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
     }
 
     .btn-secondary {
-      border: 1px solid var(--dark-border);
-
-      color: #d1d8d4;
+      border: 1px solid var(--border-dark);
+      color: var(--silver);
+      background: rgba(255, 255, 255, 0.02);
     }
 
     .btn-secondary:hover {
-      border-color: var(--green);
-      color: var(--green);
+      border-color: var(--white-neon);
+      color: var(--white-neon);
     }
 
-
-    /* =========================
-       WORKFLOW CARD
-    ========================= */
-
+    /* WORKFLOW CARD */
     .workflow-card {
-      position: relative;
-
       padding: 30px;
-
-      border: 1px solid var(--dark-border);
-
+      border: 1px solid var(--border-dark);
       border-radius: 18px;
-
-      background: rgba(255, 255, 255, 0.025);
+      background: var(--dark-card);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
     }
 
     .workflow-top {
       display: flex;
-
       justify-content: space-between;
       align-items: center;
-
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .workflow-title {
-      color: #c7d0cb;
-
+      color: var(--silver);
       font-size: 13px;
       font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
     .workflow-status {
       display: flex;
       align-items: center;
-
       gap: 7px;
-
-      color: #82908a;
-
+      color: var(--white-muted);
       font-size: 11px;
     }
 
     .status-dot {
       width: 7px;
       height: 7px;
-
       border-radius: 50%;
-
-      background: var(--green);
+      background: var(--white-neon);
+      box-shadow: 0 0 10px var(--white-neon);
     }
 
     .workflow {
       display: flex;
-
       flex-direction: column;
-
-      gap: 12px;
+      gap: 10px;
     }
 
     .workflow-node {
       display: flex;
-
       align-items: center;
-
       gap: 14px;
-
-      padding: 15px;
-
-      border: 1px solid var(--dark-border);
-
+      padding: 12px 15px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: 11px;
-
       background: var(--dark-soft);
+      transition: border-color 0.2s ease;
+    }
+
+    .workflow-node:hover {
+      border-color: rgba(255, 255, 255, 0.2);
     }
 
     .node-icon {
-      width: 38px;
-      height: 38px;
-
+      width: 34px;
+      height: 34px;
       display: grid;
       place-items: center;
-
       flex-shrink: 0;
-
-      border-radius: 9px;
-
-      background: var(--green-dark);
-
-      color: var(--green);
-
-      font-size: 16px;
+      border-radius: 8px;
+      background: var(--dark-card);
+      color: var(--white-neon);
+      border: 1px solid var(--border-dark);
+      font-size: 13px;
       font-weight: 700;
     }
 
     .node-content strong {
       display: block;
-
-      color: #edf2ef;
-
+      color: var(--silver);
       font-size: 13px;
-
-      margin-bottom: 2px;
     }
 
     .node-content span {
-      color: #75827c;
-
+      color: #52525b;
       font-size: 11px;
     }
 
     .workflow-arrow {
       margin-left: 18px;
-
-      color: #64716b;
-
-      font-size: 13px;
+      color: #3f3f46;
+      font-size: 12px;
     }
 
-
-    /* =========================
-       GENERAL SECTIONS
-    ========================= */
-
+    /* SECTIONS */
     section {
-      padding: 100px 0;
+      padding: 90px 0;
     }
 
     .section-label {
       display: block;
-
       margin-bottom: 12px;
-
-      color: #5b866f;
-
-      font-size: 12px;
-
-      font-weight: 700;
-
-      letter-spacing: 1.5px;
-
+      color: var(--text);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
       text-transform: uppercase;
     }
 
     .section-title {
-      font-size: 36px;
-
+      font-size: 34px;
       line-height: 1.15;
-
       letter-spacing: -1.2px;
-
       margin-bottom: 16px;
     }
 
     .section-description {
       color: var(--muted);
-
       max-width: 600px;
-
-      font-size: 16px;
+      font-size: 15px;
     }
 
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about {
-      background: var(--light);
-    }
-
+    /* ABOUT */
     .about-grid {
       display: grid;
-
       grid-template-columns: 0.8fr 1.2fr;
-
-      gap: 100px;
-
+      gap: 80px;
       align-items: start;
     }
 
-    .about h2 {
-      max-width: 400px;
-
-      font-size: 38px;
-
-      line-height: 1.15;
-
-      letter-spacing: -1.5px;
-    }
-
     .about-content p {
-      color: #5e6863;
-
-      font-size: 17px;
-
+      color: #3f3f46;
+      font-size: 16px;
       line-height: 1.8;
-
       margin-bottom: 18px;
     }
 
     .business-note {
-      margin-top: 28px;
-
+      margin-top: 24px;
       padding: 18px 20px;
-
-      border-left: 3px solid #8dbfa6;
-
-      background: #edf4f0;
-
-      color: #405049;
-
+      border-left: 3px solid var(--dark);
+      background: #f4f4f5;
+      color: var(--text);
       font-size: 14px;
     }
 
-
-    /* =========================
-       SERVICES
-    ========================= */
-
+    /* SERVICES */
     .services {
       background: white;
     }
 
     .section-heading {
-      margin-bottom: 45px;
+      margin-bottom: 40px;
     }
 
     .services-grid {
       display: grid;
-
       grid-template-columns: repeat(2, 1fr);
-
       gap: 18px;
     }
 
     .service-card {
-      padding: 30px;
-
+      padding: 28px;
       border: 1px solid var(--border);
-
       border-radius: 14px;
-
       background: white;
-
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .service-card:hover {
-      transform: translateY(-4px);
-
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+      border-color: var(--dark);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
 
     .service-number {
-      color: #92bca5;
-
+      color: #a1a1aa;
       font-size: 12px;
-
       font-weight: 700;
-
       letter-spacing: 1px;
-
-      margin-bottom: 22px;
+      margin-bottom: 18px;
     }
 
     .service-card h3 {
-      font-size: 20px;
-
+      font-size: 19px;
       letter-spacing: -0.5px;
-
       margin-bottom: 10px;
     }
 
     .service-card p {
-      color: #707a75;
-
+      color: var(--muted);
       font-size: 14px;
-
       line-height: 1.7;
     }
 
-
-    /* =========================
-       PRICING
-    ========================= */
-
+    /* PRICING */
     .pricing {
       background: var(--light);
     }
 
     .pricing-grid {
       display: grid;
-
       grid-template-columns: repeat(4, 1fr);
-
       gap: 15px;
     }
 
     .price-card {
       padding: 24px;
-
       border: 1px solid var(--border);
-
       border-radius: 13px;
-
       background: white;
     }
 
     .price-card h3 {
       font-size: 15px;
-
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .price {
       font-size: 22px;
-
-      font-weight: 700;
-
+      font-weight: 800;
       letter-spacing: -0.5px;
+      color: var(--dark);
     }
 
     .price-description {
       margin-top: 8px;
-
-      color: #78817d;
-
+      color: var(--muted);
       font-size: 12px;
-
       line-height: 1.5;
     }
 
     .price-note {
       margin-top: 25px;
-
-      color: #7a8580;
-
+      color: #a1a1aa;
       font-size: 12px;
     }
 
-
-    /* =========================
-       TECH STACK
-    ========================= */
-
+    /* TECH STACK */
     .tech {
       background: white;
     }
 
     .tech-group {
-      margin-bottom: 35px;
-    }
-
-    .tech-group:last-child {
-      margin-bottom: 0;
+      margin-bottom: 30px;
     }
 
     .tech-group-title {
       margin-bottom: 15px;
-
-      color: #69736e;
-
+      color: var(--muted);
       font-size: 12px;
-
       font-weight: 700;
-
       letter-spacing: 1px;
-
       text-transform: uppercase;
     }
 
     .tech-list {
       display: flex;
-
       flex-wrap: wrap;
-
       gap: 10px;
     }
 
     .tech-item {
-      padding: 11px 17px;
-
+      padding: 10px 16px;
       border: 1px solid var(--border);
-
       border-radius: 8px;
-
-      background: #fafcfb;
-
-      font-size: 14px;
-
+      background: #fafafa;
+      font-size: 13px;
       font-weight: 600;
+      color: var(--text);
     }
 
-
-    /* =========================
-       CURRENTLY
-    ========================= */
-
-    .currently {
-      background: var(--light);
-    }
-
-    .currently-grid {
-      display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 18px;
-    }
-
-    .currently-card {
-      padding: 25px;
-
-      border: 1px solid var(--border);
-
-      border-radius: 13px;
-
-      background: white;
-    }
-
-    .currently-card span {
-      display: block;
-
-      color: #6d8f7c;
-
-      font-size: 11px;
-
-      font-weight: 700;
-
-      letter-spacing: 1px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 12px;
-    }
-
-    .currently-card p {
-      color: #3e4843;
-
-      font-size: 15px;
-
-      font-weight: 600;
-    }
-
-
-    /* =========================
-       CTA
-    ========================= */
-
+    /* CTA & FOOTER */
     .cta {
-      padding: 90px 0;
-
+      padding: 80px 0;
       background: var(--dark);
-
       color: white;
-
       text-align: center;
     }
 
     .cta h2 {
-      font-size: clamp(34px, 5vw, 52px);
-
-      line-height: 1.05;
-
-      letter-spacing: -2px;
-
+      font-size: clamp(30px, 4vw, 46px);
+      line-height: 1.1;
       margin-bottom: 15px;
+      color: var(--white-neon);
     }
 
     .cta p {
       max-width: 550px;
-
       margin: 0 auto;
-
-      color: #8e9b95;
-
+      color: var(--white-muted);
       font-size: 15px;
     }
 
@@ -740,878 +505,286 @@
       margin-top: 28px;
     }
 
-
-    /* =========================
-       FOOTER
-    ========================= */
-
     footer {
       padding: 30px 0;
-
       background: var(--dark);
-
-      border-top: 1px solid var(--dark-border);
-
-      color: #738079;
-
+      border-top: 1px solid var(--border-dark);
+      color: #52525b;
       font-size: 12px;
     }
 
     .footer-inner {
       display: flex;
-
       justify-content: space-between;
-
       align-items: center;
     }
 
     .footer-brand {
-      color: #dce4df;
-
-      font-weight: 700;
+      color: var(--silver);
     }
 
-    .footer-links {
-      display: flex;
-
-      gap: 20px;
-    }
-
-    .footer-links a:hover {
-      color: var(--green);
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
+    /* RESPONSIVE */
     @media (max-width: 900px) {
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-
-        gap: 50px;
-      }
-
-      .hero {
-        padding: 130px 0 80px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-
-        gap: 35px;
-      }
-
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .currently-grid {
-        grid-template-columns: 1fr;
-      }
+      .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
 
     @media (max-width: 650px) {
-
-      .nav-links {
-        display: none;
-      }
-
-      .hero h1 {
-        font-size: 55px;
-
-        letter-spacing: -3px;
-      }
-
-      .hero h2 {
-        font-size: 25px;
-      }
-
-      .hero-description {
-        font-size: 15px;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-
-        align-items: stretch;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .workflow-card {
-        padding: 20px;
-      }
-
-      section {
-        padding: 75px 0;
-      }
-
-      .section-title,
-      .about h2 {
-        font-size: 30px;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .pricing-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-
-        gap: 15px;
-
-        text-align: center;
-      }
+      .nav-links { display: none; }
+      .services-grid, .pricing-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; gap: 15px; text-align: center; }
     }
   </style>
 </head>
 
-
 <body>
 
-
-  <!-- =========================
-       NAVIGATION
-  ========================= -->
-
+  <!-- NAVIGATION -->
   <nav>
-
     <div class="container nav-inner">
-
-      <a href="#" class="brand">
-        Wicaksono
-      </a>
-
+      <a href="#" class="brand">Wicaksono</a>
       <div class="nav-links">
-
-        <a href="#about">About</a>
-
-        <a href="#services">Services</a>
-
-        <a href="#pricing">Pricing</a>
-
-        <a href="#stack">Stack</a>
-
-        <a href="#contact" class="nav-contact">
-          Contact
-        </a>
-
+        <a href="#about">Tentang</a>
+        <a href="#services">Layanan</a>
+        <a href="#pricing">Harga</a>
+        <a href="#stack">Tools</a>
+        <a href="#contact" class="nav-contact">Hubungi Saya</a>
       </div>
-
     </div>
-
   </nav>
 
-
-
-  <!-- =========================
-       HERO
-  ========================= -->
-
+  <!-- HERO -->
   <header class="hero">
-
     <div class="container hero-grid">
-
-
       <div>
-
-        <span class="hero-label">
-          AI Automation Freelancer
-        </span>
-
-        <h1>
-          Wicaksono
-        </h1>
-
-        <h2>
-          Automation with a business mindset.
-        </h2>
-
+        <span class="hero-label">Automation & System Specialist</span>
+        <h1>Wicaksono</h1>
+        <h2>Hemat waktu bisnis dengan otomatisasi praktis.</h2>
         <p class="hero-description">
-          I help businesses simplify repetitive work
-          and build practical AI-powered workflows.
+          Saya membantu UMKM dan bisnis mengeliminasi pekerjaan manual yang berulang menggunakan n8n, Make.com, dan integrasi API.
         </p>
-
-
         <div class="hero-buttons">
-
-          <a
-            href="mailto:wicaksonodeveloper@gmail.com?subject=Automation%20Project"
-            class="btn btn-primary"
-          >
-            Let's Work Together
+          <a href="https://wa.me/6281234567890?text=Halo%20Wicaksono,%20saya%20mau%20diskusi%20proyek%20otomatisasi" class="btn btn-primary" target="_blank">
+            Diskusi Proyek via WA
           </a>
-
-          <a
-            href="Wicaksono-CV.pdf"
-            class="btn btn-secondary"
-            download
-          >
-            Download CV
+          <a href="#pricing" class="btn btn-secondary">
+            Lihat Estimasi Biaya
           </a>
-
         </div>
-
       </div>
-
-
 
       <!-- WORKFLOW VISUAL -->
-
       <div class="workflow-card">
-
         <div class="workflow-top">
-
-          <span class="workflow-title">
-            Business Workflow
-          </span>
-
+          <span class="workflow-title">Contoh Alur Kerja</span>
           <span class="workflow-status">
-
-            <span class="status-dot"></span>
-
-            Automation ready
-
+            <span class="status-dot"></span> Otomatis 24/7
           </span>
-
         </div>
-
-
         <div class="workflow">
-
-
           <div class="workflow-node">
-
-            <div class="node-icon">
-              01
-            </div>
-
+            <div class="node-icon">01</div>
             <div class="node-content">
-
-              <strong>
-                Business Input
-              </strong>
-
-              <span>
-                Data, request or repetitive task
-              </span>
-
+              <strong>Input Pesanan / Form</strong>
+              <span>Web / Google Form / Chat</span>
             </div>
-
           </div>
-
-
-          <div class="workflow-arrow">
-            ↓
-          </div>
-
-
+          <div class="workflow-arrow">↓</div>
           <div class="workflow-node">
-
-            <div class="node-icon">
-              02
-            </div>
-
+            <div class="node-icon">02</div>
             <div class="node-content">
-
-              <strong>
-                Automation
-              </strong>
-
-              <span>
-                n8n / Make.com
-              </span>
-
+              <strong>Engine n8n / Make</strong>
+              <span>Filter Data & Webhook</span>
             </div>
-
           </div>
-
-
-          <div class="workflow-arrow">
-            ↓
-          </div>
-
-
+          <div class="workflow-arrow">↓</div>
           <div class="workflow-node">
-
-            <div class="node-icon">
-              AI
-            </div>
-
+            <div class="node-icon">✓</div>
             <div class="node-content">
-
-              <strong>
-                AI Processing
-              </strong>
-
-              <span>
-                OpenAI API
-              </span>
-
+              <strong>Hasil Instan</strong>
+              <span>Rekap Sheets & Notifikasi WA</span>
             </div>
-
           </div>
-
-
-          <div class="workflow-arrow">
-            ↓
-          </div>
-
-
-          <div class="workflow-node">
-
-            <div class="node-icon">
-              ✓
-            </div>
-
-            <div class="node-content">
-
-              <strong>
-                Business Result
-              </strong>
-
-              <span>
-                Less manual work
-              </span>
-
-            </div>
-
-          </div>
-
         </div>
-
       </div>
-
     </div>
-
   </header>
 
-
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
+  <!-- ABOUT -->
   <section id="about" class="about">
-
     <div class="container about-grid">
-
-
       <div>
-
-        <span class="section-label">
-          About
-        </span>
-
-        <h2>
-          Building automation around real business problems.
-        </h2>
-
+        <span class="section-label">Tentang Saya</span>
+        <h2>Fokus menyelesaikan masalah operasional riil.</h2>
       </div>
-
-
       <div class="about-content">
-
         <p>
-          I'm a freelancer focused on practical AI automation
-          and business workflows.
+          Tugas admin yang harus <em>copy-paste</em> data secara manual dari form ke Excel, atau kirim chat konfirmasi satu per satu sangat menyita waktu berharga bisnis kamu.
         </p>
-
         <p>
-          I use automation, AI, APIs, and connected business tools
-          to reduce repetitive work and make everyday processes
-          simpler.
+          Saya membangun alur kerja otomatisasi sistem yang berjalan di latar belakang tanpa henti, sehingga kamu dan tim bisa fokus pada hal yang lebih penting: <strong>mengembangkan bisnis</strong>.
         </p>
-
         <div class="business-note">
-
-          The goal isn't to use technology just because it's new.
-          The goal is to find where automation can create useful
-          business value.
-
+          Tujuan utamanya bukan cuma pakai teknologi keren, tapi memotong jam kerja manual yang terbuang sia-sia.
         </div>
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =========================
-       SERVICES
-  ========================= -->
-
+  <!-- SERVICES -->
   <section id="services" class="services">
-
     <div class="container">
-
-
       <div class="section-heading">
-
-        <span class="section-label">
-          Services
-        </span>
-
-        <h2 class="section-title">
-          What I can automate
-        </h2>
-
+        <span class="section-label">Layanan</span>
+        <h2 class="section-title">Solusi yang bisa diotomatiskan</h2>
         <p class="section-description">
-          Practical automation solutions designed around
-          business workflows and repetitive tasks.
+          Alur kerja praktis yang disesuaikan dengan kebutuhan operasional harian bisnismu.
         </p>
-
       </div>
-
 
       <div class="services-grid">
-
-
         <div class="service-card">
-
-          <div class="service-number">
-            01
-          </div>
-
-          <h3>
-            AI Workflow Automation
-          </h3>
-
+          <div class="service-number">01</div>
+          <h3>Otomatisasi Input Data & Spreadsheet</h3>
           <p>
-            Build workflows that use AI to process information,
-            make decisions, and handle repetitive tasks.
+            Hubungkan formulir web atau transaksi penjualan langsung ke Google Sheets / Excel secara real-time tanpa perlu ketik ulang.
           </p>
-
         </div>
 
-
         <div class="service-card">
-
-          <div class="service-number">
-            02
-          </div>
-
-          <h3>
-            Business Process Automation
-          </h3>
-
+          <div class="service-number">02</div>
+          <h3>Bot Notifikasi WA / Telegram</h3>
           <p>
-            Turn repetitive manual processes into simpler
-            and more consistent automated workflows.
+            Kirim pesan konfirmasi pesanan, reminder tagihan, atau laporan harian otomatis langsung ke aplikasi pesan tim atau klien.
           </p>
-
         </div>
 
-
         <div class="service-card">
-
-          <div class="service-number">
-            03
-          </div>
-
-          <h3>
-            API & App Integration
-          </h3>
-
+          <div class="service-number">03</div>
+          <h3>Integrasi API & Webhook</h3>
           <p>
-            Connect the tools a business already uses so
-            information can move between systems automatically.
+            Menghubungkan dua atau lebih aplikasi berbeda agar saling bertukar data secara otomatis tanpa batasan sistem.
           </p>
-
         </div>
 
-
         <div class="service-card">
-
-          <div class="service-number">
-            04
-          </div>
-
-          <h3>
-            AI-Powered Workflows
-          </h3>
-
+          <div class="service-number">04</div>
+          <h3>Setup & Maintenance n8n VPS</h3>
           <p>
-            Combine AI with automation to create workflows
-            that are more capable and efficient.
+            Pemasangan n8n server mandiri di Cloud Server (VPS) agar alur kerja bisnismu berjalan 24/7 tanpa batasan eksekusi.
           </p>
-
         </div>
-
-
       </div>
-
     </div>
-
   </section>
 
-
-
-  <!-- =========================
-       PRICING
-  ========================= -->
-
+  <!-- PRICING -->
   <section id="pricing" class="pricing">
-
     <div class="container">
-
-
       <div class="section-heading">
-
-        <span class="section-label">
-          Starting From
-        </span>
-
-        <h2 class="section-title">
-          Simple pricing
-        </h2>
-
+        <span class="section-label">Investasi</span>
+        <h2 class="section-title">Harga transparan & fleksibel</h2>
         <p class="section-description">
-          Final pricing depends on workflow complexity,
-          integrations, and business requirements.
+          Biaya disesuaikan dengan tingkat kerumitan alur kerja dan integrasi aplikasi.
         </p>
-
       </div>
-
 
       <div class="pricing-grid">
-
-
         <div class="price-card">
-
-          <h3>
-            Simple Automation
-          </h3>
-
-          <div class="price">
-            Rp750K+
-          </div>
-
+          <h3>Simple Automation</h3>
+          <div class="price">Rp250K+</div>
           <p class="price-description">
-            Simple repetitive tasks and basic workflows.
+            Integrasi 1-2 aplikasi sederhana (contoh: Google Form ke Sheets & Notifikasi Telegram).
           </p>
-
         </div>
 
-
         <div class="price-card">
-
-          <h3>
-            Business Workflow
-          </h3>
-
-          <div class="price">
-            Rp2,5M+
-          </div>
-
+          <h3>Business Workflow</h3>
+          <div class="price">Rp600K+</div>
           <p class="price-description">
-            Multi-step business processes and integrations.
+            Alur multi-langkah dengan filter data, Webhook, dan format pesan WA khusus.
           </p>
-
         </div>
 
-
         <div class="price-card">
-
-          <h3>
-            AI Automation
-          </h3>
-
-          <div class="price">
-            Rp4M+
-          </div>
-
+          <h3>Server Setup & Deployment</h3>
+          <div class="price">Rp350K</div>
           <p class="price-description">
-            Workflows involving AI processing and automation.
+            Jasa install n8n + Docker + SSL gratis di VPS Cloud agar siap pakai.
           </p>
-
         </div>
 
-
         <div class="price-card">
-
-          <h3>
-            Custom Automation
-          </h3>
-
-          <div class="price">
-            Let's discuss
-          </div>
-
+          <h3>Maintenance Bulanan</h3>
+          <div class="price">Rp150K/bln</div>
           <p class="price-description">
-            Complex requirements and custom systems.
+            Sewa server tertampung + monitoring alur kerja tetap aman 24/7 tanpa pusing server.
           </p>
-
         </div>
-
-
       </div>
-
 
       <p class="price-note">
-        * Starting prices. Every project is scoped based on requirements.
+        * Harga final disepakati di awal berdasarkan diskusi kebutuhan alur kerja.
       </p>
-
     </div>
-
   </section>
 
-
-
-  <!-- =========================
-       TECH STACK
-  ========================= -->
-
+  <!-- TECH STACK -->
   <section id="stack" class="tech">
-
     <div class="container">
-
-
       <div class="section-heading">
-
-        <span class="section-label">
-          Tools
-        </span>
-
-        <h2 class="section-title">
-          Tools I work with
-        </h2>
-
-        <p class="section-description">
-          A practical stack focused on automation,
-          AI, integrations, and business workflows.
-        </p>
-
+        <span class="section-label">Alat Kerja</span>
+        <h2 class="section-title">Tech stack yang saya gunakan</h2>
       </div>
-
 
       <div class="tech-group">
-
-        <div class="tech-group-title">
-          Core
-        </div>
-
+        <div class="tech-group-title">Automation Engine</div>
         <div class="tech-list">
-
-          <div class="tech-item">
-            n8n
-          </div>
-
-          <div class="tech-item">
-            Make.com
-          </div>
-
-          <div class="tech-item">
-            OpenAI API
-          </div>
-
+          <div class="tech-item">n8n (Self-Hosted)</div>
+          <div class="tech-item">Make.com</div>
+          <div class="tech-item">Docker</div>
         </div>
-
       </div>
-
 
       <div class="tech-group">
-
-        <div class="tech-group-title">
-          Supporting
-        </div>
-
+        <div class="tech-group-title">Integrasi & Aplikasi</div>
         <div class="tech-list">
-
-          <div class="tech-item">
-            Google Sheets
-          </div>
-
-          <div class="tech-item">
-            Google Workspace
-          </div>
-
-          <div class="tech-item">
-            REST APIs
-          </div>
-
-          <div class="tech-item">
-            Python
-          </div>
-
+          <div class="tech-item">Google Sheets / Workspace</div>
+          <div class="tech-item">REST API & Webhooks</div>
+          <div class="tech-item">Telegram Bot API</div>
+          <div class="tech-item">WhatsApp Gateway API</div>
+          <div class="tech-item">Python (Scripting)</div>
         </div>
-
       </div>
-
-
     </div>
-
   </section>
 
-
-
-  <!-- =========================
-       CURRENTLY
-  ========================= -->
-
-  <section class="currently">
-
-    <div class="container">
-
-
-      <div class="section-heading">
-
-        <span class="section-label">
-          Currently
-        </span>
-
-        <h2 class="section-title">
-          What I'm working on
-        </h2>
-
-      </div>
-
-
-      <div class="currently-grid">
-
-
-        <div class="currently-card">
-
-          <span>
-            Focus 01
-          </span>
-
-          <p>
-            Building practical automation solutions.
-          </p>
-
-        </div>
-
-
-        <div class="currently-card">
-
-          <span>
-            Focus 02
-          </span>
-
-          <p>
-            Working with AI-powered workflows.
-          </p>
-
-        </div>
-
-
-        <div class="currently-card">
-
-          <span>
-            Focus 03
-          </span>
-
-          <p>
-            Exploring business automation opportunities.
-          </p>
-
-        </div>
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       CTA
-  ========================= -->
-
+  <!-- CTA -->
   <section id="contact" class="cta">
-
     <div class="container">
-
-      <h2>
-        Have a repetitive process?
-        Let's automate it.
-      </h2>
-
+      <h2>Punya pekerjaan berulang yang menyita waktu?</h2>
       <p>
-        Tell me what you're trying to improve,
-        and let's see where automation can help.
+        Konsultasikan dulu alur kerjamu secara gratis. Kita cari tahu bagian mana yang bisa diotomatiskan.
       </p>
-
-
-      <a
-        href="mailto:wicaksonodeveloper@gmail.com?subject=Automation%20Project"
-        class="btn btn-primary"
-      >
-        Let's Work Together
+      <a href="https://wa.me/6281234567890?text=Halo%20Wicaksono,%20saya%20mau%20diskusi%20proyek%20otomatisasi" class="btn btn-primary" target="_blank">
+        Hubungi via WhatsApp
       </a>
-
     </div>
-
   </section>
 
-
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
+  <!-- FOOTER -->
   <footer>
-
     <div class="container footer-inner">
-
       <div>
-
-        <span class="footer-brand">
-          Wicaksono
-        </span>
-
-        <span>
-          — AI Automation Freelancer
-        </span>
-
+        <span class="footer-brand">Wicaksono</span>
+        <span>— Workflow Automation Freelancer</span>
       </div>
-
-
       <div class="footer-links">
-
-        <a
-          href="https://www.linkedin.com/in/wicaksono-b47188345"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn
-        </a>
-
-        <a
-          href="https://github.com/Wicayonima-Reborn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-
-        <a
-          href="mailto:wicaksonodeveloper@gmail.com"
-        >
-          Email
-        </a>
-
+        <a href="https://github.com/Wicayonima-Reborn" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:wicaksonodeveloper@gmail.com">Email</a>
       </div>
-
     </div>
-
   </footer>
-
 
 </body>
 </html>
